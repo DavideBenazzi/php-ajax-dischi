@@ -7,4 +7,13 @@
 @import 'partials/variables';
 
 // IMPORT COMMON
-@import 'partials/variables';
+@import 'partials/common';
+
+// IMPORT UTILITIES
+@import 'partials/utilities';
+
+// IMPORT HEADER
+@import 'partials/header';
+
+// IMPORT MAIN
+@import 'partials/main';

@@ -14422,6 +14422,10 @@ __webpack_require__.r(__webpack_exports__);
  // AXIOS
 
 
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#app',
+  data: {}
+});
 
 /***/ }),
 

@@ -1,0 +1,13 @@
+header {
+    height: 50px;
+    background-color: $quaternary;
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        img {
+            width: 30px;
+        };
+    };
+};
