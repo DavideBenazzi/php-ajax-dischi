@@ -28,13 +28,25 @@ include __DIR__ . '/src/partials/database.php'
             </header>
             <!-- MAIN -->
             <main>
-                <div class="container list">
-                    <ul>
+                <div class="container">
+                    <ul class="list">
                         <?php foreach ($database as $data) { ?>
                             <li>
                                 <div class="album">
                                     <img src="<?php echo $data["poster"]; ?>" alt="<?php echo $data["author"]; ?>" >
                                 </div>
+                                <h2>
+                                    <?php echo $data["title"];?>
+                                </h2>
+                                <h3>
+                                    <?php echo $data["author"];?>
+                                </h3>
+                                <h2>
+                                    <?php echo $data["year"];?>
+                                </h2>
+                                <h3>
+                                    <?php echo $data["genre"];?>
+                                </h3>
                             </li>
                         <?php }; ?>
                     </ul>

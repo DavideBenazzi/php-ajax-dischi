@@ -1,8 +1,27 @@
 main {
     flex-grow: 1;
     background-color: $tertiary;
-}
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        li {
+            list-style: none;
+            flex-basis: 350px;
+            height: 500px;
+            background-color: $secondary;
+            color: $primary;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0 20px;
+            img {
+                width: 300px;
 
-img {
-    width: 100px;
+            }
+        }
+    }
 }

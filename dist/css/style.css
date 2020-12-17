@@ -6152,7 +6152,25 @@ main {
   flex-grow: 1;
   background-color: #1d2d3c;
 }
-
-img {
-  width: 100px;
+main .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+main .list li {
+  list-style: none;
+  flex-basis: 350px;
+  height: 500px;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px;
+}
+main .list li img {
+  width: 300px;
 }
