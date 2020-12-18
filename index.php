@@ -1,8 +1,3 @@
-<?php 
-// INCLUSIONE FOGLIO DATABASE PHP 
-include __DIR__ . '/src/partials/database.php'
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,25 +25,23 @@ include __DIR__ . '/src/partials/database.php'
             <main>
                 <div class="container">
                     <ul class="list">
-                        <?php foreach ($database as $data) { ?>
-                            <li>
+                            <li v-for='album in albums'>
                                 <div class="album">
-                                    <img src="<?php echo $data["poster"]; ?>" alt="<?php echo $data["author"]; ?>" >
+                                    <img :src="album.poster" :alt="album.title">
                                 </div>
                                 <h2>
-                                    <?php echo $data["title"];?>
+                                    {{ album.title }}
                                 </h2>
                                 <h3>
-                                    <?php echo $data["author"];?>
+                                    {{ album.author }}
                                 </h3>
                                 <h2>
-                                    <?php echo $data["year"];?>
+                                    {{ album.year }}
                                 </h2>
                                 <h3>
-                                    <?php echo $data["genre"];?>
+                                    {{ album.genre }}
                                 </h3>
                             </li>
-                        <?php }; ?>
                     </ul>
                 </div>
             </main>
