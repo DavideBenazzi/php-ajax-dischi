@@ -44,12 +44,41 @@
             'genre' => 'Rock'
         ]
     ];
+    
+    $selection = '';
+    $filteredAlbums = [];
+    
+    $selection = empty($_GET['userSelection']) ? false : $_GET['userSelection'];
 
+    // GET SELECTION AND FILTER ALBUMS
+    if ($selection == false || $selection == 'all') {
+        $filteredAlbums = $database;
+    } else {
+        foreach ($database as $data) {
+            if ($data['author'] == $selection) {
+                $filteredAlbums[] = $data;
+            };
+        };
+    };
+
+    // GET ARTIST AND FILL THE ARTISTS ARRAY
+    $artists = [];
+    foreach($database as $cd) {
+        if (! in_array( $cd['author'] , $artists )) {
+            $artists[] = $cd['author'];
+        };
+    };
+   
+    // FINAL DATABASE
+    $response = [
+        'albums' => $filteredAlbums,
+        'artists' => $artists,
+    ];
+
+
+    // OUTPUT
     header('Content-Type: application/json');
-
-    echo json_encode($database);
-
+    echo json_encode( $response );
+    
+ 
 ?>
-
-
-

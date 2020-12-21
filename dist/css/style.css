@@ -6140,12 +6140,21 @@ header {
 }
 header .container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 0 10px;
 }
 header .container img {
   width: 30px;
+}
+header .container .artistSelect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .artistSelect h3 {
+  color: #fff;
+  padding-right: 20px;
 }
 
 main {

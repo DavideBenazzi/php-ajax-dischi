@@ -1,23 +1,46 @@
 // VUE
 import Vue from 'vue';
 // AXIOS
-import Axios from 'axios';
+import axios from 'axios';
 
 const app = new Vue ({
     el: '#app',
     data: {
         albums: [],
+        artists: [],
+        selection: 'all',
     },
     created() {
-        Axios.get('http://localhost/php-ajax-dischi/src/partials/database.php')
+        axios.get( window.location.href + '/src/partials/database.php' )
         .then(response => {
-            // handle success
-            console.log(response.data);
-            this.albums = response.data;
+            // console.log(response.data);
+            this.albums = response.data.albums;
+            this.artists = response.data.artists;
         })
         .catch(error => {
-            // handle error
             console.log(error);
         });
     },
+    methods: {
+        changeSelection() {
+            axios.get( window.location.href + '/src/partials/database.php' , {
+                params: {
+                    userSelection: this.selection,
+                },
+            })
+            .then(response => {
+                // console.log(response.data);
+                this.albums = response.data.albums;
+                this.artists = response.data.artists;
+            })
+            .catch(error => {
+                console.log(error);
+            });           
+        },
+    },
 });
+
+
+
+
+

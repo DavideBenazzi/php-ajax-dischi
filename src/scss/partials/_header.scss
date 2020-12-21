@@ -3,11 +3,20 @@ header {
     background-color: $quaternary;
     .container {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        padding: 10px 0 10px;
         img {
             width: 30px;
+        };
+        .artistSelect {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h3 {
+                color: $primary;
+                padding-right: 20px;
+            };
         };
     };
 };

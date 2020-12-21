@@ -14425,19 +14425,37 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    albums: []
+    albums: [],
+    artists: [],
+    selection: 'all'
   },
   created: function created() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://localhost/php-ajax-dischi/src/partials/database.php').then(function (response) {
-      // handle success
-      console.log(response.data);
-      _this.albums = response.data;
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(window.location.href + '/src/partials/database.php').then(function (response) {
+      // console.log(response.data);
+      _this.albums = response.data.albums;
+      _this.artists = response.data.artists;
     })["catch"](function (error) {
-      // handle error
       console.log(error);
     });
+  },
+  methods: {
+    changeSelection: function changeSelection() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(window.location.href + '/src/partials/database.php', {
+        params: {
+          userSelection: this.selection
+        }
+      }).then(function (response) {
+        // console.log(response.data);
+        _this2.albums = response.data.albums;
+        _this2.artists = response.data.artists;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 

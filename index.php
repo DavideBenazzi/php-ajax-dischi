@@ -19,29 +19,36 @@
             <header>
                 <div class="container">
                     <img src="./img/logo.png" alt="logo">
+                    <div class="artistSelect">
+                        <h3>Seleziona il tuo artista preferito: </h3>
+                        <select name="artist" id="artist" v-model='selection' @change='changeSelection'>
+                            <option value="all">All</option>
+                            <option v-for='artist in artists' :value="artist">{{ artist }}</option>
+                        </select>
+                    </div>
                 </div>
             </header>
             <!-- MAIN -->
             <main>
                 <div class="container">
                     <ul class="list">
-                            <li v-for='album in albums'>
-                                <div class="album">
-                                    <img :src="album.poster" :alt="album.title">
-                                </div>
-                                <h2>
-                                    {{ album.title }}
-                                </h2>
-                                <h3>
-                                    {{ album.author }}
-                                </h3>
-                                <h2>
-                                    {{ album.year }}
-                                </h2>
-                                <h3>
-                                    {{ album.genre }}
-                                </h3>
-                            </li>
+                        <li v-for='album in albums'>
+                            <div class="album">
+                                <img :src="album.poster" :alt="album.title">
+                            </div>
+                            <h2>
+                                {{ album.title }}
+                            </h2>
+                            <h3>
+                                {{ album.author }}
+                            </h3>
+                            <h2>
+                                {{ album.year }}
+                            </h2>
+                            <h3>
+                                {{ album.genre }}
+                            </h3>
+                        </li>
                     </ul>
                 </div>
             </main>
